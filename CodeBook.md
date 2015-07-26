@@ -1,5 +1,8 @@
 ## Code Book
 
+Feature Selection 
+=================
+
 We have two factor variable names.
 
 Subject_ID designates the volunteer. The experiments were carried out with a group of 30 volunteers within an age bracket of 19-48 years, labelled 1 to 30.
@@ -10,75 +13,65 @@ These activities were performed with the volunteer wearing a smartphone (Samsung
 	
 The remaining variables are all averages of measurements. These averages are normalized and bounded within [-1,1]. 
 
-The following codes are used for the prefixes:
+The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. 
+These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order 
+low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals 
+(tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 
-"Average.of." designates that the value is an average of several measurements for a given activity and subject.
+Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). 
+Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
 
-"t" designates the time domain.	These time domain signals were captured at a constant rate of 50 Hz.
+Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. 
+(Note the 'f' to indicate frequency domain signals). 
 
-"f" designates the frequency domain.
+These signals were used to estimate variables of the feature vector for each pattern:  
+'-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
-"Acc" designates the measurement came from the accelerometer.
+To the following variable names we have attached the prefix "Average.of." to designate that the value is an average of several measurements for a given activity and subject.
 
-"Gyro" designates the measurement came from the gyroscope.
+tBodyAcc-XYZ
 
-"-XYZ" is used to denote 3-axial signals in the X, Y and Z directions.
+tGravityAcc-XYZ
 
-"Body" designates that the measurement coming from the accelerometer or gyroscope is related to the body.
+tBodyAccJerk-XYZ
 
-"Gravity" designates the measurement coming from the accelerometer or gyroscope is related to gravity.
+tBodyGyro-XYZ
 
-"Jerk" designates the jerk of the body linear acceleration or angular velocity.
+tBodyGyroJerk-XYZ
 
-"Mag" designates the magnitude of these three-dimensional signals calculated using the Euclidean norm.
+tBodyAccMag
 
-The prefixes related to these measurements are
+tGravityAccMag
 
-Average.of.tBodyAcc-XYZ
+tBodyAccJerkMag
 
-Average.of.tGravityAcc-XYZ
+tBodyGyroMag
 
-Average.of.tBodyAccJerk-XYZ
+tBodyGyroJerkMag
 
-Average.of.tBodyGyro-XYZ
+fBodyAcc-XYZ
 
-Average.of.tBodyGyroJerk-XYZ
+fBodyAccJerk-XYZ
 
-Average.of.tBodyAccMag
+fBodyGyro-XYZ
 
-Average.of.tGravityAccMag
+fBodyAccMag
 
-Average.of.tBodyAccJerkMag
+fBodyAccJerkMag
 
-Average.of.tBodyGyroMag
+fBodyGyroMag
 
-Average.of.tBodyGyroJerkMag
+fBodyGyroJerkMag
 
-Average.of.fBodyAcc-XYZ
+The set of variables that were estimated from these signals are: 
 
-Average.of.fBodyAccJerk-XYZ
+mean(): Mean value
 
-Average.of.fBodyGyro-XYZ
+std(): Standard deviation
 
-Average.of.fBodyAccMag
+angle(): Angle between to vectors.
 
-Average.of.fBodyAccJerkMag
-
-Average.of.fBodyGyroMag
-
-Average.of.fBodyGyroJerkMag
-
-The following suffixes were then attached to the list of prefixes above:
-
--mean(): Mean value
-
--std(): Standard deviation
-
--angle(): Angle between to vectors
-
-Additional vectors were obtained by averaging the signals in a signal window sample. 
-
-These were used on the angle() variable:
+Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
 
 gravityMean
 
@@ -89,3 +82,4 @@ tBodyAccJerkMean
 tBodyGyroMean
 
 tBodyGyroJerkMean
+
