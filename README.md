@@ -1,4 +1,6 @@
-## getting-and-cleaning-data-course-project
+## Getting and Cleaning Data Course Project
+
+This dataset was produced for the Coursera Getting and Cleaning Data July 2015 course.
 
 # Introduction and Instructions
 
@@ -30,6 +32,8 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 
 # Files
 
+The dataset contains the following files.
+
 - "README.md"
 
 - "CodeBook.md": Description of variable names in "tidy_data.txt"
@@ -38,7 +42,8 @@ https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Datas
 
 - "run_analysis.R": R Script used to creates the tidy data in step 5. To run use the following commands from the directory containing this file:
 
+The R code to read the tidy_data.txt is:
 
-The R code to read the tidy_data.txt is 
-data <- read.table("./tidy_data.txt", header = TRUE) # where "." represents the folder where "tidy_data.txt" is saved. 
+data <- read.table("./tidy_data.txt", header = TRUE) where "." represents the folder where "tidy_data.txt" is saved. 
+
 View(data)
